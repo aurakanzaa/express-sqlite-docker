@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="public/css/main.css">
+        <title>This is read from json</title>
+    </head>
+    <body>
+        <div class="container-fluid">
+          <div style="margin-top:1%;margin-bottom:1%">
+            <a href="/insert" class="btn btn-insert"><i class="fa fa-plus" aria-hidden="true"></i> Tambah Data</a>
+          </div>
+          <table>
+            <tr>
+              <th>No</th>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Instantion</th>
+              <th>Telephone</th>
+              <th>Email</th>
+              <th>Option</th>
+            </tr>
+            <% rows.forEach((item) => {  %>
+            <tr>
+              <td><%= item.no %></td>
+              <td><%= item.code %></td>
+              <td><%= item.nama %></td>
+              <td><%= item.instansi %></td>
+              <td><%= item.telp %></td>
+              <td><%= item.email %></td>
+              <td>
+                  <a href="/edit/<%= item.no %>" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                  <a href="/remove/<%= item.no %>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');"><i class="fa fa-trash"></i></a>
+              </td>
+            </tr>
+            <% }); %>
+          </table>
+        </div>
+    </body>
+</html>
+<script>
+</script>
